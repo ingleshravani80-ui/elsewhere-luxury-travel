@@ -1,0 +1,35 @@
+.about-body { display: flex; flex-direction: column; gap: 5rem; }
+
+.about-text .overline { display: block; margin-bottom: 1rem; }
+.about-text h2 { margin-bottom: 1.5rem; }
+.about-text h2 em { font-style: italic; color: var(--soft-sand); }
+.about-text p { font-size: 1.05rem; color: rgba(245,242,234,0.75); line-height: 1.9; margin-bottom: 1.25rem; max-width: 65ch; }
+
+.about-values { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+@media (max-width: 640px) { .about-values { grid-template-columns: 1fr; } }
+
+.about-value h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); margin: 1rem 0 0.5rem; }
+.about-value p { font-size: 0.95rem; color: rgba(245,242,234,0.65); line-height: 1.8; }
+
+.about-image-block { position: relative; }
+.about-image-block img { width: 100%; max-height: 500px; object-fit: cover; }
+.about-quote {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  max-width: 35ch;
+  background: rgba(23,24,22,0.85);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem 2rem;
+  border-left: 2px solid var(--muted-gold);
+}
+.about-quote p {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--warm-white);
+  max-width: none;
+}
+@media (max-width: 640px) {
+  .about-quote { position: static; margin-top: 1.5rem; }
+}

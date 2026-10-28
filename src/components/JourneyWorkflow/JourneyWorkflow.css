@@ -1,0 +1,124 @@
+.workflow {
+  background: var(--charcoal-surface);
+}
+
+.workflow__header {
+  max-width: 600px;
+  margin-bottom: 4rem;
+}
+.workflow__header .overline { display: block; margin-bottom: 1rem; }
+.workflow__header h2 { margin-bottom: 1rem; }
+.workflow__header h2 em { font-style: italic; color: var(--soft-sand); }
+.workflow__note {
+  font-size: 0.78rem;
+  color: rgba(245,242,234,0.35);
+  letter-spacing: 0.04em;
+  max-width: none;
+}
+
+/* Desktop: horizontal row */
+.workflow__steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  position: relative;
+  margin-bottom: 3.5rem;
+}
+
+.workflow-step {
+  position: relative;
+  padding: 0 1.5rem 0 0;
+}
+
+/* Connecting line between steps (desktop) */
+.workflow-step__connector {
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  width: calc(100% - 2.5rem);
+  height: 1px;
+  background: linear-gradient(to right, rgba(180,154,101,0.4), rgba(180,154,101,0.1));
+  pointer-events: none;
+  transform: translateX(2.5rem);
+}
+
+.workflow-step__num {
+  font-family: var(--font-editorial);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--muted-gold);
+  line-height: 1;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.workflow-step__title {
+  font-family: var(--font-editorial);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.workflow-step__body {
+  font-size: 0.85rem;
+  color: rgba(245,242,234,0.6);
+  line-height: 1.7;
+  max-width: 22ch;
+}
+
+.workflow__cta { text-align: center; }
+
+/* Mobile: vertical stack */
+@media (max-width: 900px) {
+  .workflow__steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .workflow-step {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 1.5rem;
+    padding: 0 0 2.5rem 0;
+    position: relative;
+  }
+
+  /* Vertical connector line */
+  .workflow-step__connector {
+    position: absolute;
+    top: 3rem;
+    left: 1.5rem;
+    width: 1px;
+    height: calc(100% - 1rem);
+    background: linear-gradient(to bottom, rgba(180,154,101,0.4), rgba(180,154,101,0.05));
+    transform: none;
+    right: auto;
+  }
+
+  .workflow-step__num {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    font-size: 2rem;
+    margin-bottom: 0;
+    align-self: start;
+  }
+
+  .workflow-step__title {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .workflow-step__body {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .workflow__header { margin-bottom: 3rem; }
+}

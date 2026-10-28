@@ -1,0 +1,34 @@
+.journal-lead {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  text-decoration: none;
+  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid rgba(245,242,234,0.08);
+  align-items: center;
+}
+.journal-lead__img { overflow: hidden; aspect-ratio: 4/3; }
+.journal-lead__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+.journal-lead:hover .journal-lead__img img { transform: scale(1.03); }
+.journal-lead__body .overline { display: block; margin-bottom: 1rem; }
+.journal-lead__body h2 { font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 0.75rem; }
+.journal-lead__subtitle { font-family: var(--font-editorial); font-style: italic; font-size: 1.1rem; color: var(--soft-sand); margin-bottom: 1rem; max-width: none; }
+.journal-lead__excerpt { font-size: 0.95rem; color: rgba(245,242,234,0.65); line-height: 1.8; margin-bottom: 1.5rem; }
+.journal-lead__author { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-gold); }
+
+.journal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+@media (max-width: 640px) { .journal-grid { grid-template-columns: 1fr; } }
+
+.journal-card { text-decoration: none; }
+.journal-card__img { aspect-ratio: 16/9; overflow: hidden; margin-bottom: 1.25rem; }
+.journal-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+.journal-card:hover .journal-card__img img { transform: scale(1.03); }
+.journal-card__body .overline { display: block; margin-bottom: 0.75rem; }
+.journal-card__body h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); margin-bottom: 0.75rem; }
+.journal-card__body p { font-size: 0.9rem; color: rgba(245,242,234,0.6); line-height: 1.7; font-style: italic; font-family: var(--font-editorial); margin-bottom: 0.75rem; }
+.journal-card__author { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-gold); }
+
+@media (max-width: 768px) {
+  .journal-lead { grid-template-columns: 1fr; gap: 2rem; }
+}

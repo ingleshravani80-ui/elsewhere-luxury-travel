@@ -1,0 +1,24 @@
+.nf-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=60');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.nf-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(23,24,22,0.78);
+}
+.nf-page__content {
+  position: relative;
+  z-index: 1;
+}
+.nf-page__content .overline { display: block; margin-bottom: 1rem; }
+.nf-page__content h1 { color: var(--warm-white); margin-bottom: 1.25rem; }
+.nf-page__content h1 em { font-style: italic; color: var(--soft-sand); }
+.nf-page__content > p { color: rgba(245,242,234,0.65); margin-bottom: 2rem; font-size: 1.05rem; }
+.nf-page__links { display: flex; gap: 1rem; flex-wrap: wrap; }
